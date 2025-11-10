@@ -1,1 +1,10 @@
 project_id = "uqnvsxbndgitkhenyqya"
+
+[functions]
+enabled = true
+
+[functions.generate-itinerary]
+verify_jwt = false
+
+[functions.chat]
+verify_jwt = false
