@@ -286,8 +286,13 @@ const Index = () => {
                   </Card>
 
                   {/* WhatsApp */}
-                  <Card className="p-4 hover:shadow-warm transition-all cursor-pointer group border-border/50" onClick={() => window.open('https://wa.me/7975256005?text=Hello%20Chandrashekhar!%20I%20need%20help%20with%20my%20travel%20plans.', '_blank')}>
-                    <div className="flex items-center gap-4">
+                  <Card className="p-4 hover:shadow-warm transition-all cursor-pointer group border-border/50">
+                    <a 
+                      href="https://wa.me/7975256005?text=Hello%20Chandrashekhar!%20I%20need%20help%20with%20my%20travel%20plans." 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4"
+                    >
                       <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
                         <MessageCircle className="w-6 h-6 text-secondary" />
                       </div>
@@ -296,7 +301,7 @@ const Index = () => {
                         <p className="text-lg font-semibold group-hover:text-secondary transition-colors">7975256005</p>
                       </div>
                       <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-secondary group-hover:translate-x-1 transition-all" />
-                    </div>
+                    </a>
                   </Card>
 
                   {/* Email */}
