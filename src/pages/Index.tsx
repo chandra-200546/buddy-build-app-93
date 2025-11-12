@@ -276,7 +276,7 @@ const Index = () => {
                   <Button 
                     size="lg" 
                     variant="outline"
-                    onClick={() => window.location.href = 'https://api.whatsapp.com/send?phone=917975256005&text=Hello%20Chandrashekhar!%20I%20need%20help%20with%20my%20travel%20plans.'}
+                    onClick={() => window.open('https://wa.me/917975256005?text=Hello%20Chandrashekhar!%20I%20need%20help%20with%20my%20travel%20plans.', '_blank')}
                   >
                     <MessageCircle className="w-5 h-5 mr-2" />
                     WhatsApp: 7975256005
