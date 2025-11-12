@@ -261,26 +261,19 @@ const Index = () => {
                 
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Chandrashekhar</h3>
-                  <p className="text-muted-foreground">Full Stack Developer</p>
-                </div>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  <Button 
-                    size="lg" 
-                    className="bg-gradient-warm shadow-warm hover:shadow-elegant transition-all"
-                    onClick={() => window.location.href = 'tel:+917975256005'}
-                  >
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    Call: 7975256005
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    onClick={() => window.open('https://wa.me/7975256005?text=Hello%20Chandrashekhar!%20I%20need%20help%20with%20my%20travel%20plans.', '_blank')}
-                  >
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    WhatsApp: 7975256005
-                  </Button>
+                  <p className="text-muted-foreground mb-4">Full Stack Developer</p>
+                  
+                  <div className="space-y-2 text-foreground">
+                    <p className="text-lg">
+                      <span className="font-semibold">Phone:</span> 7975256005
+                    </p>
+                    <p className="text-lg">
+                      <span className="font-semibold">WhatsApp:</span> 7975256005
+                    </p>
+                    <p className="text-lg">
+                      <span className="font-semibold">Email:</span> chandrashekharkumbarias8055@gmail.com
+                    </p>
+                  </div>
                 </div>
               </div>
             </Card>
