@@ -30,6 +30,8 @@ const Plan = () => {
     try {
       const result = await generateItinerary(formData);
       setItinerary(result.itinerary);
+      // Save to localStorage for persistence
+      localStorage.setItem('currentItinerary', JSON.stringify(result.itinerary));
       toast({
         title: "Itinerary Generated!",
         description: "Your personalized travel plan is ready.",

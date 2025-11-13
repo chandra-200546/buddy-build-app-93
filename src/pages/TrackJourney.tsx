@@ -39,7 +39,17 @@ const TrackJourney = () => {
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [nearestDestination, setNearestDestination] = useState<string | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
-  const itinerary = location.state?.itinerary;
+  
+  // Get itinerary from navigation state or localStorage
+  const getItinerary = () => {
+    if (location.state?.itinerary) {
+      return location.state.itinerary;
+    }
+    const stored = localStorage.getItem('currentItinerary');
+    return stored ? JSON.parse(stored) : null;
+  };
+  
+  const itinerary = getItinerary();
 
   useEffect(() => {
     if (!itinerary) {
