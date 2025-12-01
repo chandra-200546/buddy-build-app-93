@@ -181,6 +181,14 @@ export type Database = {
     }
     Functions: {
       generate_trip_code: { Args: never; Returns: string }
+      is_group_admin: {
+        Args: { _group_id: string; _user_id: string }
+        Returns: boolean
+      }
+      is_group_member: {
+        Args: { _group_id: string; _user_id: string }
+        Returns: boolean
+      }
     }
     Enums: {
       split_type: "equal" | "custom" | "percentage"
