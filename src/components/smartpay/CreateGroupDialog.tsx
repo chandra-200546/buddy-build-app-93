@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Users, Sparkles } from "lucide-react";
 
 interface CreateGroupDialogProps {
   open: boolean;
@@ -86,38 +87,68 @@ const CreateGroupDialog = ({ open, onOpenChange, onSuccess }: CreateGroupDialogP
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Create Trip Group</DialogTitle>
-          <DialogDescription>
+      <DialogContent className="sm:max-w-md bg-card border-border shadow-2xl">
+        <DialogHeader className="space-y-3">
+          <div className="mx-auto w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+            <Users className="w-7 h-7 text-primary" />
+          </div>
+          <DialogTitle className="text-center text-xl font-bold text-foreground">
+            Create Trip Group
+          </DialogTitle>
+          <DialogDescription className="text-center text-muted-foreground">
             Create a new group to manage expenses with your travel companions
           </DialogDescription>
         </DialogHeader>
-        <div className="space-y-4">
-          <div>
-            <Label htmlFor="name">Group Name</Label>
+        
+        <div className="space-y-5 py-4">
+          <div className="space-y-2">
+            <Label htmlFor="name" className="text-sm font-medium text-foreground">
+              Group Name <span className="text-destructive">*</span>
+            </Label>
             <Input
               id="name"
-              placeholder="Goa Trip 2024"
+              placeholder="e.g., Goa Trip 2024"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              className="h-11 bg-background border-input text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
             />
           </div>
-          <div>
-            <Label htmlFor="description">Description (Optional)</Label>
+          
+          <div className="space-y-2">
+            <Label htmlFor="description" className="text-sm font-medium text-foreground">
+              Description <span className="text-muted-foreground text-xs">(Optional)</span>
+            </Label>
             <Textarea
               id="description"
-              placeholder="Weekend getaway with friends"
+              placeholder="e.g., Weekend getaway with friends"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              rows={3}
+              className="resize-none bg-background border-input text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
             />
           </div>
+
+          <div className="flex items-center gap-2 p-3 rounded-lg bg-primary/5 border border-primary/20">
+            <Sparkles className="w-4 h-4 text-primary flex-shrink-0" />
+            <p className="text-xs text-muted-foreground">
+              A unique trip code will be generated to share with your group members.
+            </p>
+          </div>
         </div>
-        <DialogFooter>
-          <Button variant="outline" onClick={() => onOpenChange(false)}>
+
+        <DialogFooter className="flex gap-3 sm:gap-3">
+          <Button 
+            variant="outline" 
+            onClick={() => onOpenChange(false)}
+            className="flex-1 border-border text-foreground hover:bg-muted"
+          >
             Cancel
           </Button>
-          <Button onClick={handleCreate} disabled={loading}>
+          <Button 
+            onClick={handleCreate} 
+            disabled={loading}
+            className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
+          >
             {loading ? "Creating..." : "Create Group"}
           </Button>
         </DialogFooter>
